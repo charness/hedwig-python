@@ -2,7 +2,7 @@ Hedwig documentation
 ====================
 
 Hedwig is a inter-service communication bus that works on AWS SQS/SNS, while keeping things pretty simple and
-straight forward. It uses `json schema`_ `draft v4`_ for schema validation so all incoming
+straight forward. It uses `json schema`_ `draft v7`_ for schema validation so all incoming
 and outgoing messages are validated against pre-defined schema.
 
 Hedwig allows separation of concerns between consumers and publishers so your services are loosely coupled, and the
@@ -40,6 +40,6 @@ Indices and tables
 * :ref:`search`
 
 .. _Django settings: https://docs.djangoproject.com/en/2.0/topics/settings/
-.. _draft v4: http://json-schema.org/specification-links.html#draft-4
+.. _draft v7: http://json-schema.org/specification-links.html#draft-7
 .. _json schema: http://json-schema.org/
 .. _Taskhawk: http://taskhawk.rtfd.io/

@@ -6,13 +6,13 @@ from pathlib import Path
 
 import funcy
 from jsonschema import SchemaError, RefResolutionError, FormatChecker
-from jsonschema.validators import Draft4Validator
+from jsonschema.validators import Draft7Validator
 
 from hedwig.conf import settings
 from hedwig.exceptions import ValidationError
 
 
-class MessageValidator(Draft4Validator):
+class MessageValidator(Draft7Validator):
     # uuid separated by hyphens:
     _human_uuid_re = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
 
@@ -37,7 +37,7 @@ class MessageValidator(Draft4Validator):
 
     @property
     def schema_root(self) -> str:
-        return self.schema['id']
+        return self.schema['$id']
 
     def validate(self, message) -> None:
         """
@@ -98,7 +98,7 @@ class MessageValidator(Draft4Validator):
         return bool(MessageValidator._human_uuid_re.match(instance))
 
 
-class FormatValidator(Draft4Validator):
+class FormatValidator(Draft7Validator):
     def __init__(self):
         # automatically load schema
         schema_filepath = Path(__file__).resolve().parent / 'format_schema.json'

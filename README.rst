@@ -20,7 +20,7 @@ Hedwig Library for Python
     :target: https://github.com/ambv/black
 
 Hedwig is a inter-service communication bus that works on AWS SQS/SNS, while keeping things pretty simple and
-straight forward. It uses `json schema`_ `draft v4`_ for schema validation so all incoming
+straight forward. It uses `json schema`_ `draft v7`_ for schema validation so all incoming
 and outgoing messages are validated against pre-defined schema.
 
 Hedwig allows separation of concerns between consumers and publishers so your services are loosely coupled, and the
@@ -71,8 +71,8 @@ Create a JSON-schema and save as ``schema.json``:
 .. code:: json
 
     {
-        "id": "https://hedwig.automatic.com/schema#",
-        "$schema": "http://json-schema.org/draft-04/schema",
+        "$id": "https://hedwig.automatic.com/schema#",
+        "$schema": "http://json-schema.org/draft-07/schema",
         "schemas": {
             "email.send": {
                 "1.*": {
@@ -169,6 +169,6 @@ We use GitHub issues for tracking bugs and feature requests.
 
 .. _Read the Docs: https://authedwig.readthedocs.io/en/latest/
 .. _Django settings: https://docs.djangoproject.com/en/2.0/topics/settings/
-.. _draft v4: http://json-schema.org/specification-links.html#draft-4
+.. _draft v4: http://json-schema.org/specification-links.html#draft-7
 .. _json schema: http://json-schema.org/
 .. _Taskhawk: https://github.com/Automatic/taskhawk-python
